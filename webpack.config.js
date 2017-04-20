@@ -13,7 +13,10 @@ const configs = {
     devtool: NODE_ENV === 'development' ? 'source-map' : null,
 
     // entry points of out application
-    entry: `${__dirname}/src/js/app.js`,
+    entry: [
+
+      `${__dirname}/src/js/app.js`
+    ],
     output: {
         path: `${__dirname}/build/js`,
         filename: 'app.js',
@@ -39,14 +42,6 @@ const configs = {
               test: /\.js$/,
               use: 'babel-loader',
               exclude: nodeModulesPath
-          },
-          {
-            enforce: 'pre',
-            test: /\.js$/,
-            loaders: ['eslint-loader'],
-            include: [
-              path.resolve(__dirname, "src"),
-            ],
           }
         ]
     },

@@ -2,48 +2,80 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Template</title>
+    <title>ITChallenges</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#fff">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" media="all" href="css/style.css">
-    <script src="js/vendors/picturefill.min.js"></script>
-    <script src="js/vendors/polyfill.object-fit.min.js"></script>
-    <!--[if lt IE 9]>
-    <script src="js/vendors/html5shiv.js"></script>
-<![endif]-->
   </head>
   <body>
-
     <!-- BEGIN content -->
     <div class="out">
       <!-- header -->
       <header class="header">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci amet aperiam asperiores eaque est fuga iure. Alias aspernatur beatae dolor est laudantium libero neque, nisi quae, rerum tenetur vitae.</p>
+        <h1 class="title">Map distance calculator</h1>
       </header>
       <!-- page content -->
-      <svg class="icon icon-close">
-        <use xlink:href="img/sprite.svg#icon-close"></use>
-      </svg>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium assumenda, at culpa cum deserunt ea expedita fuga illo incidunt maxime praesentium quaerat quod similique sunt voluptates voluptatum. Culpa, sint.</p>
-      sdsd dfdgfgryjh
-
-      <div class="item-0">sdsd0</div>
-      <div class="item-1">sdsd1</div>
-      <div class="item-2">sdsd2</div>
-      <div class="item-3">sdsd3</div>
-      <div class="item-4">sdsd4</div>
+      <ul class="mode">
+        <li>
+          <label class="radio">
+            <input type="radio" data-mode="DIRECT" name="mode" checked>
+            <span>Direct</span>
+          </label>
+        </li>
+        <li>
+          <label class="radio">
+            <input type="radio" data-mode="WALKING" name="mode">
+            <span>walking</span>
+          </label>
+        </li>
+        <li>
+          <label class="radio">
+            <input type="radio" data-mode="BICYCLING" name="mode">
+            <span>bicycling</span>
+          </label>
+        </li>
+        <li>
+          <label class="radio">
+            <input type="radio" data-mode="DRIVING" name="mode">
+            <span>driving</span>
+          </label>
+        </li>
+        <li>
+          <label class="radio">
+            <input type="radio" data-mode="TRANSIT" name="mode">
+            <span>TRANSIT</span>
+          </label>
+        </li>
+      </ul>
+      <div class="app">
+        <div class="map">
+          <div id="map"></div>
+        </div>
+        <div class="sidebar">
+          <div class="calculate">
+            <div class="calculate__result">
+              <strong id="result"></strong>
+            </div>
+          </div>
+          <div class="sidebar__bottom">
+            <div class="help">Click the right mouse button on the marker to delete</div>
+            <button id="calculateBtn" class="btn">Calculate!</button>
+            <button id="resetBtn" class="btn btn_red">Reset all!</button>
+          </div>
+        </div>
+      </div>
+      <!-- notifications -->
+      <div id="alert" class="alert alert-info">
+        <div class="alert__close"></div>
+        <div class="alert__content">Only 2 points allowed for TRANSIT mode!</div>
+      </div>
     </div>
     <!-- END content -->
 
-    <!-- footer -->
-    <footer class="footer">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eveniet minus provident quis! Ad, aut consectetur earum est, ex laudantium maxime molestiae nostrum officiis pariatur perspiciatis sed, ut vel! Voluptatem.</p>
-    </footer>
     <!-- BEGIN scripts -->
-    <script type="text/javascript" src="js/common.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn1c9p34y5dIPp8PTe4k0jzJDRSp1ysAw&"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <!-- END scripts -->
 

@@ -1,16 +1,53 @@
----
-title: Template
----
-
 {% extends "./layouts/_layout.nunjucks" %}
 
 {% block content %}
-	{{ mixins.icon('close') }}
-	<p>Lorem ipsum dolor sit  amet, consectetur adipisicing elit. A accusantium assumenda, at culpa cum deserunt ea expedita fuga illo incidunt maxime praesentium quaerat quod similique sunt voluptates voluptatum. Culpa, sint.</p>
-    sdsd
-    dfdgfgryjh
-
-    {% for i in range(0, 5) %}
-        <div class="item-{{ i }}">sdsd{{ i }}</div>
-    {% endfor %}
+  <ul class="mode">
+      <li>
+        <label class="radio">
+          <input type="radio" data-mode="DIRECT" name="mode" checked>
+          <span>Direct</span>
+        </label>
+      </li>
+      <li>
+        <label class="radio">
+          <input type="radio" data-mode="WALKING" name="mode">
+          <span>walking</span>
+        </label>
+      </li>
+      <li>
+        <label class="radio">
+          <input type="radio" data-mode="BICYCLING" name="mode">
+          <span>bicycling</span>
+        </label>
+      </li>
+      <li>
+        <label class="radio">
+          <input type="radio" data-mode="DRIVING" name="mode">
+          <span>driving</span>
+        </label>
+      </li>
+      <li>
+        <label class="radio">
+          <input type="radio" data-mode="TRANSIT" name="mode">
+          <span>TRANSIT</span>
+        </label>
+      </li>
+    </ul>
+  <div class="app">
+    <div class="map">
+      <div id="map"></div>
+    </div>
+    <div class="sidebar">
+      <div class="calculate">
+        <div class="calculate__result">
+          <strong id="result"></strong>
+        </div>
+      </div>
+      <div class="sidebar__bottom">
+        <div class="help">Click the right mouse button on the marker to delete</div>
+        <button id="calculateBtn" class="btn">Calculate!</button>
+        <button id="resetBtn" class="btn btn_red">Reset all!</button>
+      </div>
+    </div>
+  </div>
 {% endblock %}
